@@ -1,0 +1,28 @@
+import tkinter
+window=tkinter.Tk()
+window.title('Calculator')
+window.geometry("300x300")
+l1=tkinter.Label(window, text="Calculator", font=("Arial", 10), bg='red', fg='white')
+
+lt=tkinter.Label(window, text="William Tobi Tkinter Calculator").pack()
+l2=tkinter.Label(window, text="Input what you want to calculate here", font=('Arial', 10), bg='black', fg='white').pack()
+
+
+
+x=tkinter.StringVar()
+
+x.set("10+10")
+en1=tkinter.Entry(window, textvariable=x, justify="center", width=30).pack()
+
+def cal():
+        l3=tkinter.Label(window, text="")
+        l3.pack()
+        l3.config(text=str(eval(x.get())))
+
+
+        
+        
+b1=tkinter.Button(window, text="Calculate", width=30, bg="black", fg="white", command=cal)
+b1.pack()
+    
+window.mainloop()
